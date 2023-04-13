@@ -1,0 +1,2 @@
+to generate icons of the app goto this page
+https://github.com/ionic-team/capacitor-assets

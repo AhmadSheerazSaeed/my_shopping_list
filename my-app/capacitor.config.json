@@ -1,0 +1,11 @@
+{
+  "appId": "me.sheeraz.www",
+  "appName": "my shopping list",
+  "bundledWebRuntime": false,
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "appId": "me.sheeraz",
+  "appName": "my shopping list",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
