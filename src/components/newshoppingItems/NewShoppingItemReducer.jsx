@@ -8,7 +8,7 @@ export function itemReducer(state, action) {
     case "ADD_ITEM": {
       //  if the input of item is empty
       if (action.payload.inputItem.trim() === "") {
-        alert("PLease, enter the item");
+        alert("Please, enter the item");
         return state;
         //  this else is executed when the state has objects
       } else if (state.length > 0) {
