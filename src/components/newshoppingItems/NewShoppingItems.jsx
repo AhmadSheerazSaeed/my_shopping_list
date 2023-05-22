@@ -29,7 +29,10 @@ function NewShoppingItems() {
   // function to handle add item button
   const addItemBtn = (e) => {
     e.preventDefault();
-    dispatch({ type: "ADD_ITEM", payload: { selectedCategory, inputItem } });
+    dispatch({
+      type: "ADD_ITEM",
+      payload: { selectedCategory, inputItem, displayLanguage },
+    });
     setInputItem("");
   };
 
@@ -56,7 +59,7 @@ function NewShoppingItems() {
             : "Einkaufsartikel hinzufügen"}
         </h1>
         {/*this is select section for categories */}
-        <section className="mt-2 text-center">
+        <section className="mt-3 text-center">
           <label className="text-white">
             {displayLanguage.en ? "Select Category" : "Kategorie auswählen"}
             <select
@@ -76,7 +79,7 @@ function NewShoppingItems() {
           {/* select section for category */}
         </section>
 
-        <section className="flex justify-center pt-1">
+        <section className="flex justify-center pt-2">
           <form>
             <input
               className="bg-color-primary-1 text-white border-b-2 p-1  focus:outline-none"
@@ -113,37 +116,39 @@ function NewShoppingItems() {
                     </p>
 
                     {elemInItemState.items.length > 0
-                      ? elemInItemState.items.map((elemInItems, i) => (
-                          <section
-                            key={i}
-                            className="flex items-center justify-between px-10 text-white"
-                          >
-                            <div>
-                              <p className="pt-1 ">
-                                {elemInItems.substring(0, 1).toUpperCase()}
-                                {elemInItems.substring(1)}
-                              </p>
-                            </div>
-                            <div>
-                              <MdOutlineDeleteSweep
-                                type="button"
-                                onClick={() => {
-                                  handleItemDelete(
-                                    elemInItems,
-                                    elemInItemState.category
-                                  );
-                                }}
-                                className=""
-                              />
-                            </div>
-                          </section>
-                        ))
+                      ? elemInItemState.items
+                          .sort((a, b) => (a > b ? 1 : -1))
+                          .map((elemInItems, i) => (
+                            <section
+                              key={i}
+                              className="flex items-center justify-between px-10 text-white"
+                            >
+                              <div>
+                                <p className="pt-1 ">
+                                  {elemInItems.substring(0, 1).toUpperCase()}
+                                  {elemInItems.substring(1)}
+                                </p>
+                              </div>
+                              <div>
+                                <MdOutlineDeleteSweep
+                                  type="button"
+                                  onClick={() => {
+                                    handleItemDelete(
+                                      elemInItems,
+                                      elemInItemState.category
+                                    );
+                                  }}
+                                  className=""
+                                />
+                              </div>
+                            </section>
+                          ))
                       : null}
                   </div>
                 ))}
             </section>
           ) : (
-            <h4 className="text-white text-center pt-4 text-xl">
+            <h4 className="text-white text-center pt-8 text-xl">
               {displayLanguage.en
                 ? "No Items To Display"
                 : "Keine Artikel zum Anzeigen"}

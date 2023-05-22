@@ -54,7 +54,7 @@ function Help() {
   } else {
     return (
       <section className="text-white px-5 mt-20 overflow-scroll text-justify break-all">
-        <h1 className="text-3xl text-center font-bold">
+        <h1 className="text-2xl text-center font-bold">
           Wie man die App benutzt
         </h1>
 

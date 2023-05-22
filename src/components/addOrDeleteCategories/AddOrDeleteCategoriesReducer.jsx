@@ -1,17 +1,28 @@
 export const categoryReducer = (state, action) => {
   switch (action.type) {
     case "getCategoryFromLocalStorage": {
-      console.log("get category form local storage");
+      // console.log("get category form local storage");
     }
     case "addNewCategory": {
-      if (action.payload.trim() === "") {
-        alert("Please, enter the category");
+      console.log(action.payload.categoryInput);
+      if (action.payload.categoryInput.trim() === "") {
+        alert(
+          action.payload.displayLanguage.en
+            ? "Please, Enter Category"
+            : "Bitte, Kategorie eingeben"
+        );
         return state;
-      } else if (state.includes(action.payload.trim().toLowerCase())) {
-        alert("Category already exist !");
+      } else if (
+        state.includes(action.payload.categoryInput.trim().toLowerCase())
+      ) {
+        alert(
+          action.payload.displayLanguage.en
+            ? "Category already exist !"
+            : "Kategorie existiert bereits !"
+        );
         return state;
       } else {
-        return [...state, action.payload.toLowerCase()];
+        return [...state, action.payload.categoryInput.toLowerCase()];
         // console.log(state);
       }
     }

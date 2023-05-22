@@ -15,7 +15,10 @@ function AddOrDeleteCategories() {
 
   const addNewCategoryfunc = (e) => {
     e.preventDefault();
-    dispatch({ type: "addNewCategory", payload: categoryInput });
+    dispatch({
+      type: "addNewCategory",
+      payload: { categoryInput, displayLanguage },
+    });
     setCategoryInput("");
   };
 
@@ -92,7 +95,9 @@ function AddOrDeleteCategories() {
             })
         ) : (
           <h1 className="text-white text-center text-2xl pt-6">
-            No Categories To Show
+            {displayLanguage.en
+              ? "No Categories To Show"
+              : "Keine Kategorien zum Anzeigen"}
           </h1>
         )}
       </section>
