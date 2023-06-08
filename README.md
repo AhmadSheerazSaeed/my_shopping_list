@@ -1,6 +1,14 @@
  <h1 style="text-align: center;">Shopping items with categories</h1>
 
-## Need for this app
+## Use this QR code to download Android app
+
+![alt text](./app_qr_code/my_shopping_app_qr_code.jpg)
+
+## or use the following link
+
+https://play.google.com/store/apps/details?id=me.sheeraz
+
+# Need for this app
 
 I always faced problems with my shopping list. I wrote items on paper or sometimes in a notepad in my mobile phone. I had downloaded many apps from the google play store but they are not according to my needs. So, as i am doing Web Development
 Course, I said to myself why don't I develop an app for myself and use my knowledge
